@@ -36,4 +36,11 @@ export class ProfilesService {
     // .pipe(map(res=>res.json()));
   
   }
+  getRepos(){
+    return this.http.get(this.apiUrl + this.username +"/repos"+"?client_id=" +this.id+"&client_secret=" + this.apiKey);
+    // .pipe(map(res=>res.JSON()));;
+   
+  // .pipe(map(res=>res.json()));
+
+  }
 }

@@ -1,8 +1,7 @@
 <div *ngIf="profile"> 
   <div class="panel panel-default">
     <div class="panel-heading">
-      {{profile.name}} 
-      <small>{{profile.login}}</small>
+      {{profile.name}}<small>({{profile.login}})</small>
       <span *ngIf profile.location>,Located at {{profile.location}}</span>
        
     </div>
@@ -16,7 +15,7 @@
           <ul class="li-group">
             <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
             <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
-            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:profile.email">{{profile.email}}</a></li>
+            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:">{{profile.email}}</a></li>
           </ul>
 
         </div>
@@ -24,12 +23,28 @@
         <div class="col-sm-4">
           <div>
             <p>
-              <span class="label label-default" *ngIf="profile.followers"> {{profile.followers}}Followers</span>
-              <span class="label label-default" *ngIf="profile.following"> Following: {{profile.following}}</span><br />
-              <span class="label label-default" *ngIf="profile.public_repos"> Repos: {{profile.public_repos}}</span>
-
+              <span class="label label-success" *ngIf="profile.followers"> {{profile.followers}}Followers</span>
+              <span class="label label-info" *ngIf="profile.following"> Following: {{profile.following}}</span>
+              <span class="label label-dark" *ngIf="profile.public_repos"> Repos: {{profile.public_repos}}</span>
+              <span class="label label-warning" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</span>
 
             </p>
+            <p>
+              <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on GitHub</a>
+            </p>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Repositories</h4>
+                <div class="panel-body" *ngFor="let repo of repos">
+                  <p>
+                    {{repo.name}}<a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View project in GitHub</a>
+                  </p>
+                  {{repo.description}}
+
+                </div>
+
+              </div>
+            </div>
           </div>
 
         </div>
