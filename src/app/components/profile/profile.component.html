@@ -1,3 +1,4 @@
+
 <div *ngIf="profile"> 
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -37,9 +38,13 @@
                 <h4 class="panel-title">Repositories</h4>
                 <div class="panel-body" *ngFor="let repo of repos">
                   <p>
-                    {{repo.name}}<a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View project in GitHub</a>
-                  </p>
+                    {{repo.name}}</p>
+                    <p><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View project in GitHub</a>
+                  
+                  <p>
                   {{repo.description}}
+                </p>
+                <hr>
 
                 </div>
 
