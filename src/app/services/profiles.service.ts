@@ -29,8 +29,8 @@ export class ProfilesService {
   }
   //Function to get data
   getProfileInfo(){
-    return this.http.get(this.apiUrl + this.username +"?client_id=" +this.id+"&client_secret=" + this.apiKey)
-    .pipe(map(res => res.valueOf()));
+    return this.http.get(this.apiUrl + this.username +"?client_id=" +this.id+"&client_secret=" + this.apiKey);
+    // .pipe(map(res => res.valueOf()));
     
     
     // .pipe(map(res=>res.json()));

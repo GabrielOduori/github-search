@@ -1,3 +1,45 @@
-<p>
-  profile works!
-</p>
+<div *ngIf="profile"> 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{profile.name}} 
+      <small>{{profile.login}}</small>
+      <span *ngIf profile.location>,Located at {{profile.location}}</span>
+       
+    </div>
+    <div panel-body>
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="{{profile.avatar_url}}" class="img-square img-responsive" alt="Profile Image">
+
+        </div>
+        <div class="col-sm-5">
+          <ul class="li-group">
+            <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+            <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
+            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:profile.email">{{profile.email}}</a></li>
+          </ul>
+
+        </div>
+
+        <div class="col-sm-4">
+          <div>
+            <p>
+              <span class="label label-default" *ngIf="profile.followers"> {{profile.followers}}Followers</span>
+              <span class="label label-default" *ngIf="profile.following"> Following: {{profile.following}}</span><br />
+              <span class="label label-default" *ngIf="profile.public_repos"> Repos: {{profile.public_repos}}</span>
+
+
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+ 
+  </div>
+
+
+</div>
+
