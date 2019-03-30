@@ -1,4 +1,4 @@
-export class Profiles {
+export class ProfileClass {
     constructor(
         public id:number,
         public node_id:string,
@@ -30,5 +30,5 @@ export class Profiles {
         public following:number,
         public created_at:any,
         public updated_at:any
-        ){}
+    ){}
 }

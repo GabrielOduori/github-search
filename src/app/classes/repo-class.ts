@@ -1,4 +1,4 @@
-export class Repos {
+export class RepoClass {
     constructor(
         public id:number,
         public node_id:string,
@@ -20,5 +20,6 @@ export class Repos {
         public type:string,
         public site_admin:boolean,
         public description:string
+
     ){}
 }
