@@ -24,15 +24,14 @@
             <li class="list-group-item" *ngIf="profile.blog">Blog: <a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
             <li class="list-group-item" *ngIf="profile.email">Email: <a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
             <br >
-            <br />
-            <li class="label label-success" *ngIf="profile.followers"> {{profile.followers}} Followers</li><br >
-            <br />
-            <li class="label label-info" *ngIf="profile.following"> Following: {{profile.following}}</li><br >
-            <li class="label label-dark" *ngIf="profile.public_repos"> Repositories: {{profile.public_repos}}</li><br >
-            <li class="label label-warning" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</li><br >
+            <li class="btn btn-success btn-sm" *ngIf="profile.followers"> {{profile.followers}} Followers</li><br >
+            
+            <li class="btn btn-info btn-sm" *ngIf="profile.following"> Following: {{profile.following}}</li><br >
+            <li class="btn btn-dark btn-sm" *ngIf="profile.public_repos"> Repositories: {{profile.public_repos}}</li><br >
+            <li class="btn btn-warning btn-sm" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</li><br >
             <br/>
             <p>
-                <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on GitHub</a>
+                <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-bg">View profile on GitHub</a>
               </p>
           </ul>
 
