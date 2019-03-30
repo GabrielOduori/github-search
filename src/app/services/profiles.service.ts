@@ -30,7 +30,7 @@ export class ProfilesService {
   
   constructor(private http:HttpClient) { 
     console.log("Service is now ready");
-    this.username = "gabrieloduori"//"alexomaset"//"Ephraim-Kamau";//this will be replaced by searchbox
+    //this.username = "gabrieloduori"//"alexomaset"//"Ephraim-Kamau";//this will be replaced by searchbox
     
     this.profile = new ProfileClass(0,"","","","","","","","","","","","","","","",false,"","","","","","","",0,"",0,0,"","");
     this.repo  = new RepoClass(0,"","","","",0,"","",0,"","","","","","","","","",false,"")
@@ -108,6 +108,6 @@ export class ProfilesService {
   }
 
   updateProfile(username:string){
-    this.username=username
+    this.username=username 
   }
 }

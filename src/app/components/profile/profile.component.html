@@ -19,25 +19,37 @@
         </div>
         <div class="col-sm-5">
           <ul class="li-group">
-            <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
-            <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
-            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:">{{profile.email}}</a></li>
+              <li class="list-group-item" *ngIf="profile.created_at">Profile created on: {{profile.created_at|date}}</li>
+            <li class="list-group-item" *ngIf="profile.bio">BIO: {{profile.bio}}</li>
+            <li class="list-group-item" *ngIf="profile.blog">Blog: <a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
+            <li class="list-group-item" *ngIf="profile.email">Email: <a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+            <br >
+            <br />
+            <li class="label label-success" *ngIf="profile.followers"> {{profile.followers}} Followers</li><br >
+            <br />
+            <li class="label label-info" *ngIf="profile.following"> Following: {{profile.following}}</li><br >
+            <li class="label label-dark" *ngIf="profile.public_repos"> Repositories: {{profile.public_repos}}</li><br >
+            <li class="label label-warning" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</li><br >
+            <br/>
+            <p>
+                <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on GitHub</a>
+              </p>
           </ul>
 
         </div>
 
         <div class="col-sm-4">
           <div>
-            <p>
+            <!-- <p>
               <span class="label label-success" *ngIf="profile.followers"> {{profile.followers}}Followers</span>
               <span class="label label-info" *ngIf="profile.following"> Following: {{profile.following}}</span>
               <span class="label label-dark" *ngIf="profile.public_repos"> Repositories: {{profile.public_repos}}</span>
               <span class="label label-warning" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</span>
 
-            </p>
-            <p>
+            </p> -->
+            <!-- <p>
               <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on GitHub</a>
-            </p>
+            </p> -->
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">Repositories</h4>
