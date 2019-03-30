@@ -18,7 +18,7 @@ Steps:
 5. Run npm install. This will look through the package.json and install all required modules.
 6. Run ng serve -o. This will serve up the application on a browser using the default port(4200)
 
-##License
+## License
 
 GitHub Search is Copyright 2019 Gabriel ODUORI.
 
