@@ -24,11 +24,13 @@ export class ProfileComponent implements OnInit {
     this.profilesservice.getProfileInfo().subscribe(profile=>{
       // console.log(profile);
       this.profile=profile;
+  
     });
     this.profilesservice.getRepos().subscribe(repos=>{
       // console.log(repos);
       this.repos=repos;
     });
+
   }
 
   ngOnInit() {

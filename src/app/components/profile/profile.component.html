@@ -1,19 +1,21 @@
 <form accept="" id="SearchForm">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search GitHub profiles using username" [(ngModel)]="username" name="username"(keyup)="findProfile()">
-    <!-- <input type="text" class="form-control" placeholder="GitHub username" [(ngModel)]="username" name="username"> -->
-
+    <!-- <input type="text" class="form-control" placeholder="Search GitHub profiles using username" [(ngModel)]="username" name="username"(keydown)="findProfile()"> -->
+    <input type="text" class="form-control" placeholder="GitHub username" [(ngModel)]="username" name="username">
+  
   </div>
-  <!-- <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary"
   (click) ="findProfile()">Search Profiles
 
-  </button> -->
+  </button>
+
 
 </form>
+<hr>
 <div *ngIf="profile"> 
   <div class="panel panel-default">
     <div class="panel-heading">
-      {{profile.name}}<small>({{profile.login}})</small>
+      {{profile.name}}({{profile.login}})
       <span *ngIf profile.location>,Located at {{profile.location}}</span>
        
     </div>

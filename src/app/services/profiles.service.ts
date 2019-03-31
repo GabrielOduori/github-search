@@ -41,6 +41,7 @@ export class ProfilesService {
 
   
   getProfileInfo(){
+    //Curently using observables
     return this.http.get(this.apiUrl + this.username +"?client_id=" +this.id+"&client_secret=" + this.apiKey);
     
     // .pipe(map(res => res.valueOf()));
