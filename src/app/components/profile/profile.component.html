@@ -1,7 +1,13 @@
 <form accept="" id="SearchForm">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search GitHub profiles using username" [(ngModel)]="username" name="username"(keydown)="findProfile()">
+    <input type="text" class="form-control" placeholder="Search GitHub profiles using username" [(ngModel)]="username" name="username"(keyup)="findProfile()">
+    <!-- <input type="text" class="form-control" placeholder="GitHub username" [(ngModel)]="username" name="username"> -->
+
   </div>
+  <!-- <button type="button" class="btn btn-primary"
+  (click) ="findProfile()">Search Profiles
+
+  </button> -->
 
 </form>
 <div *ngIf="profile"> 
