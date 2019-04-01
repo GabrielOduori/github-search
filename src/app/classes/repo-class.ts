@@ -7,7 +7,7 @@ export class RepoClass {
         // public avatar_url:string,
         // public gravatar_id:number,
         // public url:string,
-        // public html_url:string,
+        public html_url:string,
         // public followers_url:number,
         // public following_url:string,
         // public gists_url:string,

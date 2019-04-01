@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
       <blockquote class="text-center text-lg">
           <p>
@@ -7,13 +7,13 @@
               This is data: {{user.created_at|date}}
               This is data: {{user.following}}
               <!-- Repository: {{newRepo.name}} -->
-          </p>
+          <!-- </p>
 
-      </blockquote>
+      </blockquote> -->
+<!-- 
+  </div> -->
 
-  </div>
-
-</div>
+<!-- </div> -->
 
 
 <form accept="" id="SearchForm">
@@ -24,43 +24,39 @@
   </div>
   <button type="button" class="btn btn-primary"
   (click) ="findUserProfile()">Search GitHub Profile
-  </button> >>>>>
-  <button type="button" class="btn btn-secondary" 
-  (click) ="userViaPromise()"> Search using Promises
-
   </button>
 </form>
 
 
 <hr>
-<div *ngIf="profile"> 
+<div *ngIf="user"> 
   <div class="panel panel-default">
     <div class="panel-heading">
-        {{profile.name}}({{profile.login}})
-      <span *ngIf profile.location>,Located at {{profile.location}}</span>
+        {{user.name}}({{user.login}})
+      <!-- <span *ngIf profile.location>,Located at {{user.location}}</span> -->
        
     </div>
     <div panel-body>
       <div class="row">
         <div class="col-sm-3">
-          <img src="{{profile.avatar_url}}" class="img-square img-responsive" alt="Profile Image">
+          <img src="{{user.avatar_url}}" class="img-square img-responsive" alt="Profile Image">
 
         </div>
         <div class="col-sm-5">
           <ul class="li-group">
-              <li class="list-group-item" *ngIf="profile.created_at">Profile created on: {{profile.created_at|date}}</li>
-            <li class="list-group-item" *ngIf="profile.bio">BIO: {{profile.bio}}</li>
-            <li class="list-group-item" *ngIf="profile.blog">Blog: <a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
-            <li class="list-group-item" *ngIf="profile.email">Email: <a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+              <li class="list-group-item" *ngIf="user.created_at">Profile created on: {{user.created_at|date}}</li>
+            <li class="list-group-item" *ngIf="user.bio">BIO: {{user.bio}}</li>
+            <li class="list-group-item" *ngIf="user.blog">Blog: <a href="{{user.blog}}" target="_blank">{{user.blog}}</a></li>
+            <li class="list-group-item" *ngIf="user.email">Email: <a href="emailto:{{user.email}}">{{user.email}}</a></li>
             <br >
-            <li class="btn btn-success btn-sm" *ngIf="profile.followers"> {{profile.followers}} Followers</li><br >
+            <li class="btn btn-success btn-sm" *ngIf="user.followers"> {{user.followers}} Followers</li><br >
             
-            <li class="btn btn-info btn-sm" *ngIf="profile.following"> Following: {{profile.following}}</li><br >
-            <li class="btn btn-dark btn-sm" *ngIf="profile.public_repos"> Repositories: {{profile.public_repos}}</li><br >
-            <li class="btn btn-warning btn-sm" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</li><br >
+            <li class="btn btn-info btn-sm" *ngIf="user.following"> Following: {{user.following}}</li><br >
+            <li class="btn btn-dark btn-sm" *ngIf="user.public_repos"> Repositories: {{user.public_repos}}</li><br >
+            <li class="btn btn-warning btn-sm" *ngIf="user.public_gists"> GIST: {{user.public_gists}}</li><br >
             <br/>
             <p>
-                <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-bg">View profile on GitHub</a>
+                <a href="{{user.html_url}}" target="_blank" class="btn btn-success btn-bg">View profile on GitHub</a>
               </p>
           </ul>
 

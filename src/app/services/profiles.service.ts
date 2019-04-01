@@ -23,18 +23,21 @@ export class ProfilesService {
   //Creating properties to use for getting data:
 
   // username:string  ="gabrieloduori";
+  // username:string ="gabrieloduori"
   public username:string;
   
   private apiKey = environment.apiKey
   private apiUrl=environment.apiUrl
   private id=environment.id
 
-  // userAPI = `https://api.github.com/users/${this.username}?client_id=${this.id}&client_secret=${this.apiKey}`;
-   public userAPI = '${this.apiUrl} +"gabrieloduori?client_id=${this.id}"&client_secret=${this.apiKey}';
-
-
   userPromise:ProfileClass;
   repoPromise:RepoClass;
+
+  // userAPI = `https://api.github.com/users/${this.username}?client_id=${this.id}&client_secret=${this.apiKey}`;
+  //  public userAPI = '${this.apiUrl} +"gabrieloduori?client_id=${this.id}"&client_secret=${this.apiKey}';
+
+
+ 
   
   constructor(private http:HttpClient) { 
     console.log("Service is running well");
@@ -42,7 +45,7 @@ export class ProfilesService {
     // this.profile = new ProfileClass(0,"","","","","","","","","","","","","","","",false,"","","","","","","",0,"",0,0,"","");
 
     this.userPromise = new ProfileClass("","","","","","","","","",0,"",0,0,"");
-    // this.repo  = new RepoClass(0,"","","","",0,"","",0,"","","","","","","","","",false,"")
+    this.repoPromise  = new RepoClass("","", "")
 
   }
   //SENDING HTTP REQUEST AND GETTING BACK DATA
@@ -86,12 +89,13 @@ export class ProfilesService {
   getNewRepoInfo(){
     interface ApiResponse{
       name:string;
+      html_url:string;
       description:string;
     }
 
-    let  repoAPI = `${this.apiUrl}${this.username}+"/repos"+?client_id=${this.id}&client_secret=${this.apiKey}`;
+    let  repoAPI = `${this.apiUrl}${this.username}/repos?client_id=${this.id}&client_secret=${this.apiKey}`;
     return this.http.get<ApiResponse>(repoAPI)
-    
+
     .toPromise()
 
   }

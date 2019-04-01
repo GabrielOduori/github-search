@@ -15,12 +15,11 @@ export class ProfileComponent implements OnInit {
 
   profile:any;
   repos:any;
+
   username:string;
   user:ProfileClass;
   newRepo:RepoClass;
   apiURL=environment.apiUrl
-  // defaultUname='gabrieloduori'
-
 
   constructor(private profilesservice:ProfilesService, private http:HttpClient) { 
   
@@ -28,49 +27,45 @@ export class ProfileComponent implements OnInit {
 
   findUserProfile(){
 
-    //update the username input
-    this.profilesservice.updateProfile(this.username);
-    this.profilesservice.getProfileInfo().subscribe(profile=>{
-      this.profile=profile;
   
-    });
-    this.profilesservice.getRepos().subscribe(repos=>{
-      this.repos=repos;
-    });
-
+    this.profilesservice.updateProfile(this.username);
+    this.profilesservice.getNewProfileInfo().then(data => {
+      console.log('We get the data', data);
+      this.user = new ProfileClass(
+        data.avatar_url,
+        data.followers_url,
+        data.following_url,
+        data.gists_url,
+        data.login, 
+        data.name,
+        data.company,
+        data.blog,
+        data.bio,
+        data.public_repos,
+        data.public_gists,
+        data.followers,
+        data.following,
+        data.created_at);
+    }).catch(error => {
+      console.log('error', error)
+    })
+ 
+    this.profilesservice.getNewRepoInfo()
+      .then(newrepo =>{
+        console.log('Repo name', newrepo)
+        this.repos = newrepo;
+      }).catch(error => {
+        console.log('error', error)
+      })
+ 
   }
 
   userViaPromise(username:string){
     this.profilesservice.getNewProfileInfo();
+    this.profilesservice.getNewRepoInfo();
   }
 
   ngOnInit() {
-    this.profilesservice.getNewProfileInfo()
-      .then(data => {
-        this.user = new ProfileClass(
-          data.avatar_url,
-          data.followers_url,
-          data.following_url,
-          data.gists_url,
-          data.login, 
-          data.name,
-          data.company,
-          data.blog,
-          data.bio,
-          data.public_repos,
-          data.public_gists,
-          data.followers,
-          data.following,
-          data.created_at);
-      });
-
-      this.profilesservice.getNewRepoInfo()
-      .then(dat =>{
-        this.newRepo = new RepoClass(
-          dat.name,
-          dat.description
-        );
-      })
   
   }
 
