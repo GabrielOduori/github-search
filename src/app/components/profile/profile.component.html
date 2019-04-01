@@ -1,3 +1,21 @@
+<div class="container">
+  <div class="row">
+      <blockquote class="text-center text-lg">
+          <p>
+              This is data: {{user.login}}
+              This is data: {{user.following}}
+              This is data: {{user.created_at|date}}
+              This is data: {{user.following}}
+              <!-- Repository: {{newRepo.name}} -->
+          </p>
+
+      </blockquote>
+
+  </div>
+
+</div>
+
+
 <form accept="" id="SearchForm">
   <div class="form-group">
     <!-- <input type="text" class="form-control" placeholder="Search GitHub profiles using username" [(ngModel)]="username" name="username"(keydown)="findProfile()"> -->
@@ -5,17 +23,20 @@
   
   </div>
   <button type="button" class="btn btn-primary"
-  (click) ="findProfile()">Search Profiles
+  (click) ="findUserProfile()">Search GitHub Profile
+  </button> >>>>>
+  <button type="button" class="btn btn-secondary" 
+  (click) ="userViaPromise()"> Search using Promises
 
   </button>
-
-
 </form>
+
+
 <hr>
 <div *ngIf="profile"> 
   <div class="panel panel-default">
     <div class="panel-heading">
-      {{profile.name}}({{profile.login}})
+        {{profile.name}}({{profile.login}})
       <span *ngIf profile.location>,Located at {{profile.location}}</span>
        
     </div>
@@ -47,16 +68,6 @@
 
         <div class="col-sm-4">
           <div>
-            <!-- <p>
-              <span class="label label-success" *ngIf="profile.followers"> {{profile.followers}}Followers</span>
-              <span class="label label-info" *ngIf="profile.following"> Following: {{profile.following}}</span>
-              <span class="label label-dark" *ngIf="profile.public_repos"> Repositories: {{profile.public_repos}}</span>
-              <span class="label label-warning" *ngIf="profile.public_gists"> GIST: {{profile.public_gists}}</span>
-
-            </p> -->
-            <!-- <p>
-              <a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on GitHub</a>
-            </p> -->
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">Repositories</h4>
