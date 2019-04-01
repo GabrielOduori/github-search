@@ -15,8 +15,8 @@
 <div *ngIf="user"> 
   <div class="panel panel-default">
     <div class="panel-heading">
-        {{user.name}}({{user.login}})
-      <!-- <span *ngIf profile.location>,Located at {{user.location}}</span> -->
+        {{user.name}}
+      <span *ngIf ="user.location">,Located in {{user.location}}</span>
        
     </div>
     <div panel-body>
