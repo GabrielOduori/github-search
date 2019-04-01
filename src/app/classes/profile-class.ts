@@ -21,7 +21,7 @@ export class ProfileClass {
         public name:string,
         public company:string,
         public blog:string,
-        // public location:string,
+        public location:string,
         // public email:string,
         // public hireable:string,
         public bio:string,

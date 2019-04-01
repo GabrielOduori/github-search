@@ -33,22 +33,17 @@ export class ProfilesService {
   userPromise:ProfileClass;
   repoPromise:RepoClass;
 
-  // userAPI = `https://api.github.com/users/${this.username}?client_id=${this.id}&client_secret=${this.apiKey}`;
-  //  public userAPI = '${this.apiUrl} +"gabrieloduori?client_id=${this.id}"&client_secret=${this.apiKey}';
-
-
  
   
   constructor(private http:HttpClient) { 
     console.log("Service is running well");
-    //this.username = "gabrieloduori"//"alexomaset"//"Ephraim-Kamau";//this will be replaced by searchbox
-    // this.profile = new ProfileClass(0,"","","","","","","","","","","","","","","",false,"","","","","","","",0,"",0,0,"","");
 
-    this.userPromise = new ProfileClass("","","","","","","","","",0,"",0,0,"");
+
+    this.userPromise = new ProfileClass("","","","","","","","","","",0,"",0,0,"");
     this.repoPromise  = new RepoClass("","", "")
 
   }
-  //SENDING HTTP REQUEST AND GETTING BACK DATA
+
 
 
   //Using observables
@@ -61,6 +56,7 @@ export class ProfilesService {
    
   }
 
+  //Using promises
   getNewProfileInfo(){
     interface ApiResponse{
          avatar_url:string; 
@@ -71,6 +67,7 @@ export class ProfilesService {
         name:string;
         company:string;
          blog:string;
+         location:string;
          bio:string;
          public_repos:number;
          public_gists:string;

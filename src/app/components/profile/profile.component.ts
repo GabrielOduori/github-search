@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  //These two uses observables;
   profile:any;
   repos:any;
 
@@ -40,6 +40,7 @@ export class ProfileComponent implements OnInit {
         data.name,
         data.company,
         data.blog,
+        data.location,
         data.bio,
         data.public_repos,
         data.public_gists,
