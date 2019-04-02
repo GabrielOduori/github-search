@@ -9,18 +9,19 @@ Gabriel ODUORI
 
 ## Installation
 
-The application is written in Angular Framework. It will therefore require Node.js and Angular CLI
-Steps:
-1. Clone the repository
-2. Install Node.js from node website
-3. Install Angular CLI by running the command from the terminal
+
+1. Install Node
+2. Install Angular
 
 ```bash
 npm install -g @angular/cli 
+
+$ git clone the repository
+$ cd into the repository
+$ npm install
+$ npm start
 ```
-4. CD into the folder with the cloned repository
-5. Run npm install. This will look through the package.json and install all required modules.
-6. Run ng serve -o. This will serve up the application on a browser using the default port(4200)
+
 
 ## License
 
