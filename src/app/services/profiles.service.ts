@@ -26,7 +26,7 @@ export class ProfilesService {
   // username:string ="gabrieloduori"
   public username:string;
   
-  private apiKey = environment.apiKey
+  private apiKey=environment.apiKey
   private apiUrl=environment.apiUrl
   private id=environment.id
 
