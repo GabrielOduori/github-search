@@ -3,12 +3,15 @@
 ## Project Description
 TGitHub Search is an application that uses GitHub API to searh for users profiles. Users enter their users name on the search box and click the enter button.
 
+## Page Location
+
+https://gabrieloduori.github.io/github-search
+
 ## Author
 
 Gabriel ODUORI
 
 ## Installation
-
 
 1. Install Node
 2. Install Angular
@@ -21,6 +24,10 @@ $ cd into the repository
 $ npm install
 $ npm start
 ```
+
+## How to use
+
+Type in the username in the search box and click search. For example to get to my own page, searcg using string "gabrieloduori".
 
 
 ## License

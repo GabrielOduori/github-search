@@ -6,8 +6,8 @@ export const environment = {
 
   production: false,
   apiUrl:"https://api.github.com/users/",
-  id : "45095fc253d94777c40c",
-  apiKey:"4d19efab5108aaa81f1513de879b84ea5b40b48b",
+  id : "f25eacb4aec9c0cc10a9",
+  apiKey:"c3db363828a7850916f6899b485f20a2db717e3c",
 
 };
 
