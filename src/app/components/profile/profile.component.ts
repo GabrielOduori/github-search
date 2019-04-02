@@ -33,8 +33,9 @@ export class ProfileComponent implements OnInit {
       console.log('We get the data', data);
       this.user = new ProfileClass(
         data.avatar_url,
-        data.followers_url,
+        data.html_url,
         data.following_url,
+        
         data.gists_url,
         data.login, 
         data.name,

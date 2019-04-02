@@ -2,7 +2,7 @@
 <form accept="" id="SearchForm">
   <div class="form-group">
     <!-- <input type="text" class="form-control" placeholder="Search GitHub profiles using username" [(ngModel)]="username" name="username"(keydown)="findProfile()"> -->
-    <input type="text" class="form-control" placeholder="GitHub username" [(ngModel)]="username" name="username">
+    <input type="text" class="form-control" placeholder="Search 'gabrieloduori' for my own profile" [(ngModel)]="username" name="username" >
   
   </div>
   <button type="button" class="btn btn-primary"
@@ -39,7 +39,8 @@
             <li class="btn btn-warning btn-sm" *ngIf="user.public_gists"> GIST: {{user.public_gists}}</li><br >
             <br/>
             <p>
-              <a href="{{user.html_url}}" target="_blank" class="btn btn-success btn-bg">View profile on GitHub</a>
+              <a href="{{user.html_url}}" target="_blank"class="btn btn-success btn-bg">View profile on GitHub</a>
+              <!-- <a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a> -->
             </p>
           </ul>
 

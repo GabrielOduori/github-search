@@ -60,8 +60,8 @@ export class ProfilesService {
   getNewProfileInfo(){
     interface ApiResponse{
          avatar_url:string; 
-         followers_url:string;
          following_url:string;
+         html_url:string;
          gists_url:string;
         login:string;
         name:string;
