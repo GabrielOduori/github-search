@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
   
     this.profilesservice.updateProfile(this.username);
     this.profilesservice.getNewProfileInfo().then(data => {
-      console.log('We get the data', data);
+      // console.log('We get the data', data);
       this.user = new ProfileClass(
         data.avatar_url,
         data.html_url,
@@ -54,17 +54,12 @@ export class ProfileComponent implements OnInit {
  
     this.profilesservice.getNewRepoInfo()
       .then(newrepo =>{
-        console.log('Repo name', newrepo)
+        // console.log('Repo name', newrepo)
         this.repos = newrepo;
       }).catch(error => {
         console.log('error', error)
       })
  
-  }
-
-  userViaPromise(username:string){
-    this.profilesservice.getNewProfileInfo();
-    this.profilesservice.getNewRepoInfo();
   }
 
   ngOnInit() {
