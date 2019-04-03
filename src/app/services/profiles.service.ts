@@ -22,7 +22,6 @@ export class ProfilesService {
 
   //Creating properties to use for getting data:
 
-  // username:string  ="gabrieloduori";
   // username:string ="gabrieloduori"
   public username:string;
   
